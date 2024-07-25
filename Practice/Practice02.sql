@@ -136,6 +136,6 @@ select concat(
                when 7 then '토요일'
            end ,
            ')'
-       ) 입사일
+       ) '입사일'
 FROM employees
 ;
