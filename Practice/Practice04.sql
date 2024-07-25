@@ -45,6 +45,7 @@ order by salary
 도시아이디(location_id), 거리명(street_address), 우편번호(postal_code), 도시명(city), 
 주(state_province), 나라아이디(country_id) 를 출력하세요. (1건) */
 
+-- 조건절 비교
 select l.location_id AS '도시아이디'
      , l.street_address AS '거리명'  
      , l.postal_code AS '우편번호'
@@ -59,6 +60,19 @@ where l.location_id = ( SELECT d.location_id
 												  WHERE e.first_name = 'Steven'
 												  AND e.last_name = 'King'))
 ;
+
+-- 테이블 조인
+select l.location_id
+     , l.street_address
+     , l.postal_code
+     , l.city
+     , l.state_province
+     , l.country_id
+from locations l, 
+(select location_id, department_id from departments) as d,
+(select department_id, first_name, last_name from employees) as e
+where e.first_name = 'Steven' and e.last_name = 'king' 
+and e.department_id = d.department_id and d.location_id = l.location_id;
 
 /* 서브쿼리 사용x
 select 
