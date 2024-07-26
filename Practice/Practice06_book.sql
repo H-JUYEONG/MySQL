@@ -79,7 +79,7 @@ select b.book_id '책번호'
      , a.author_desc '작가정보'
 from book b
 left join author a
-on  b.author_id = a.author_id
+on b.author_id = a.author_id
 ;
 
 -- 강풀정보 변경
@@ -98,7 +98,7 @@ select b.book_id '책번호'
      , a.author_desc '작가정보'
 from book b
 left join author a
-on  b.author_id = a.author_id
+on b.author_id = a.author_id
 ;
 
 -- 기안84 작가 삭제
