@@ -240,7 +240,7 @@ INNER JOIN (SELECT a.region_id
 			GROUP BY a.region_id
 			) b
 ON r.region_id = b.region_id
-WHERE b.avgSalary = (SELECT MAX(d.avgSalary) AS aSalary -- 평균월급의 최대값이랑 같은 값 찾기
+WHERE b.avgSalary = (SELECT MAX(d.avgSalary) AS avgSalary -- 평균월급의 최대값이랑 같은 값 찾기
 					 FROM (SELECT c.region_id
 								, AVG(c.salary) AS avgSalary
 						   FROM (SELECT r.region_id
